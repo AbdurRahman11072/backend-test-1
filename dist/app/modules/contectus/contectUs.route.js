@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ContectUsRoute = void 0;
+const express_1 = require("express");
+const contectUs_controller_1 = require("./contectUs.controller");
+const router = (0, express_1.Router)();
+router.post("/post-info", contectUs_controller_1.contectUsController.PostInfo);
+router.get("/", contectUs_controller_1.contectUsController.GetAllContectInfo);
+router.delete("/:id", contectUs_controller_1.contectUsController.DeleteContectUs);
+exports.ContectUsRoute = router;
