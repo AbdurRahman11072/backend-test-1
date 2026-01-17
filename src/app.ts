@@ -11,7 +11,7 @@ app.use(
       "http://localhost:3000",
       "https://green-university-roan.vercel.app",
     ],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   }),
 );
 app.use(express.json());
