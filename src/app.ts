@@ -22,10 +22,9 @@ app.use(appRouter);
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello there");
 });
-app.all(/(.*)/, (req: Request, res: Response, next: NextFunction) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
   const msg = `Can't find this route: ${req.originalUrl}`;
   const error = new customError(msg, 404);
-
   next(error);
 });
 app.use(globalErrorHandler);
