@@ -6,8 +6,10 @@ const globalErrorHandler = (
   error: any,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
+  res.header("Access-Control-Allow-Origin", req.headers.origin);
+  res.header("Access-Control-Allow-Credentials", "true");
   const isDev = config.NODE_ENV === "DEV";
   error.statusCode = error.statusCode || 500;
   error.status = error.status || "Error";
