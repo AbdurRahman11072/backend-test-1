@@ -5,17 +5,7 @@ import globalErrorHandler from "./app/middleware/globalErrorHandler";
 import { appRouter } from "./app/routes";
 
 const app = express();
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "https://green-university-roan.vercel.app/",
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  }),
-);
+app.use(cors());
 app.use(express.json());
 
 app.use(appRouter);
